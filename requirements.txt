@@ -1,0 +1,22 @@
+# Jupyter et extensions
+jupyterlab==4.0.8
+notebook==7.0.6
+ipywidgets==8.1.1
+jupyter
+
+# Data Science essentials
+numpy==1.24.3
+pandas==2.1.4
+matplotlib==3.8.2
+seaborn==0.13.0
+plotly==5.17.0
+
+# Machine Learning
+scikit-learn==1.3.2
+scipy==1.11.4
+
+# Utilitaires
+tqdm==4.66.1
+requests==2.31.0
+ipykernel
+
