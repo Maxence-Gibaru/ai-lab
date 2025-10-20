@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   jupyter:
     build:
@@ -7,19 +5,27 @@ services:
       dockerfile: Dockerfile
     container_name: jupyterlab
     user: root
-    # ports:
-    #   - "9999:8888"
     volumes:
       - ./notebooks:/home/dev/workspace/notebooks
-      - ~/.config/nvim:/root/.config/nvim   
+      - ~/.config/nvim:/root/.config/nvim
       - ~/.ssh:/root/.ssh
-      - ~/.gitconfig:/root/.gitconfig:ro   
+      - ~/.gitconfig:/root/.gitconfig:ro
     environment:
       - JUPYTER_ENABLE_LAB=yes
     restart: unless-stopped
-    # Garder le container en vie pour VS Code
-    # Commande personnalisée si nécessaire
-    # command: jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root
     command: jupyter lab --ip=0.0.0.0 --port=9999 --allow-root
     working_dir: /home/dev/workspace
     network_mode: "host"
+
+  jupyter-gpu:
+    extends:
+      service: jupyter
+    runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: ["gpu"]
+    profiles: ["gpu"]
+

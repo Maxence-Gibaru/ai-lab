@@ -7,4 +7,5 @@
 .npm/
 .local/
 .gitconfig
+.dotnet/
 nvim-config/
