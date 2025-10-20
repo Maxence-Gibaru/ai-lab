@@ -32,7 +32,7 @@ COPY ./nvim-config /root/.config/nvim
 # --- Create runtime folders for VSCode/Jupyter ---
 RUN mkdir -p /root/.local/share/jupyter /root/.vscode-server /root/.venvs
 
-WORKDIR /root/work
-COPY . /root/work
+WORKDIR /root/workspace
+COPY . /root/workspace
 
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--NotebookApp.token="]
