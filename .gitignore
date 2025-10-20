@@ -1,0 +1,10 @@
+.vscode-server/
+.cache/
+.config/
+.gnupg/
+.ssh/
+.ipython/
+.npm/
+.local/
+.gitconfig
+nvim-config/
