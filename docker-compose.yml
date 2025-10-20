@@ -6,7 +6,7 @@ services:
     container_name: jupyterlab
     user: root
     volumes:
-      - ./notebooks:/home/dev/workspace/notebooks
+      - ./workspace/:/home/dev/workspace
       - ~/.config/nvim:/root/.config/nvim
       - ~/.ssh:/root/.ssh
       - ~/.gitconfig:/root/.gitconfig:ro
